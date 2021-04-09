@@ -1,38 +1,100 @@
 .App {
-  text-align: center;
+    text-align: center;
+}
+
+.greyBG {
+    background-color: #cccccc !important;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.Card-layout {
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.card-avatar {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    border-radius: 100%;
+    background-position: center center;
+    background-size: cover;
+    border: white 2px solid;
+}
+
+.contact-info {
+    position: relative;
+    margin: 20px auto;
+    background-color: #ffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: hsla(0, 0%, 100%, .85);
+    border: 1px solid #e4e4e4;
+    max-width: 360px;
+    height: 60px;
+    border-radius: 7px;
+}
+
+.icon-contact {
+    flex: 1 1;
+    position: relative;
+    margin: auto;
+}
+
+.name-contact {
+    flex: 2 1;
+    position: relative;
+    margin: auto;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.action-contact {
+    flex: 1 1;
+    position: relative;
+    margin: auto;
+}
+
+.social-logo {
+    width: 40px;
+    height: 40px;
+}
+.user-name {
+    margin-top: 10px;
 }
