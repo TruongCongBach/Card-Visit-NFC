@@ -1,7 +1,40 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
+jobs:
+  build:
+    docker:
+      - image: "node:12"
+    steps:
+      - run:
+          name: Check Node Version
+          command: node --version && yarn -v
+      - run:
+          name: Build Source
+          command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
+  deploy:
+    docker:
+      - image: garland/aws-cli-docker
+    working_directory: /tmp
+    steps:
+      - attach_workspace:
+          at: /tmp
+      - run:
+          name: Deploy to s3
+          command: aws s3 sync build/ s3://card-visit-nfc
+
 workflows:
-  node-tests:
+  build_deploy_product:
     jobs:
-      - node/test
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+      - deploy:
+          requires:
+            - build
