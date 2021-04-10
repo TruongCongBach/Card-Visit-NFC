@@ -9,15 +9,15 @@ jobs:
       - run:
           name: Check Node Version
           command: node --version && npm -v
-       - checkout
-       - restore_cache:
+      - checkout
+      - restore_cache:
           key: card-visit-nfc-{{ checksum "package.json" }}
       - run:
-            name: Update npm
-            command: npm install -g npm
+          name: Update npm
+          command: npm install -g npm
       - run:
-         name: Install Dependencies
-         command: npm install
+          name: Install Dependencies
+          command: npm install
       - save_cache:
           key: card-visit-nfc-{{ checksum "package.json" }}
           paths:
