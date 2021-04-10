@@ -8,10 +8,10 @@ jobs:
     steps:
       - run:
           name: Check Node Version
-          command: node --version && yarn -v
+          command: node --version && npm -v
       - run:
           name: Build Source
-          command: yarn build
+          command: npm build
       - persist_to_workspace:
           root: .
           paths:
