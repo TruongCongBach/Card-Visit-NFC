@@ -17,7 +17,7 @@ jobs:
          command: npm install
       - run:
           name: Build Source
-          command: npm build
+          command: npm run build
       - persist_to_workspace:
           root: .
           paths:
