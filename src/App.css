@@ -50,14 +50,12 @@
 .card-avatar {
     width: 200px;
     height: 200px;
-    text-align: center;
     border-radius: 100%;
-    background-position: center center;
-    background-size: cover;
     border: white 2px solid;
 }
 
 .contact-info {
+    cursor: pointer;
     position: relative;
     margin: 20px auto;
     background-color: #ffff;
