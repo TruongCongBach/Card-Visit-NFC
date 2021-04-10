@@ -7,8 +7,14 @@ jobs:
       - image: "node:12"
     steps:
       - run:
+            name: Update npm
+            command: npm install -g npm
+      - run:
           name: Check Node Version
           command: node --version && npm -v
+      - run:
+         name: Install Dependencies
+         command: npm install
       - run:
           name: Build Source
           command: npm build
