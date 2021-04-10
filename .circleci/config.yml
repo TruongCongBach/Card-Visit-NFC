@@ -7,14 +7,21 @@ jobs:
       - image: "node:12"
     steps:
       - run:
+          name: Check Node Version
+          command: node --version && npm -v
+       - checkout
+       - restore_cache:
+          key: card-visit-nfc-{{ checksum "package.json" }}
+      - run:
             name: Update npm
             command: npm install -g npm
       - run:
-          name: Check Node Version
-          command: node --version && npm -v
-      - run:
          name: Install Dependencies
          command: npm install
+      - save_cache:
+          key: card-visit-nfc-{{ checksum "package.json" }}
+          paths:
+            - node_modules
       - run:
           name: Build Source
           command: npm run build
