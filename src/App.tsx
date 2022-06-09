@@ -3,6 +3,7 @@ import CardVisit                                   from "./CardVisit";
 import customersCardVisit                          from "./contacts";
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
+import Privacy from './Privacy';
 
 function App() {
     return (
@@ -16,6 +17,9 @@ function App() {
                             <CardVisit cardVisit={cardVisit}/>
                         </Route>;
                     })}
+                  <Route path={'/privacy'}>
+                    <Privacy/>
+                  </Route>
                 </Switch>
             </Router>
         </div>
